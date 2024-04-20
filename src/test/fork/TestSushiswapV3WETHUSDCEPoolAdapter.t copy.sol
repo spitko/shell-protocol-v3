@@ -6,7 +6,7 @@ import "../../interfaces/Interactions.sol";
 import "../../ocean/Ocean.sol";
 import "../../adapters/UniswapV3Adapter.sol";
 
-contract TestUniswapV3WETHUSDCEPoolAdapter is Test {
+contract TestSushiswapV3WETHUSDCEPoolAdapter is Test {
     Ocean ocean;
     address wallet = 0x1eED63EfBA5f81D95bfe37d82C8E736b974F477b; // MIM whale
     address secondaryTokenWallet = 0x1eED63EfBA5f81D95bfe37d82C8E736b974F477b; // 2pool LP whale
@@ -17,7 +17,7 @@ contract TestUniswapV3WETHUSDCEPoolAdapter is Test {
     function setUp() public {
         vm.createSelectFork("https://arb1.arbitrum.io/rpc"); // Will start on latest block by default
         ocean = new Ocean("");
-        adapter = new UniswapV3Adapter(address(ocean), 0xC31E54c7a869B9FcBEcc14363CF510d1c41fa443); // weth pool address
+        adapter = new UniswapV3Adapter(address(ocean), 0x15E444da5b343c5A0931f5d3e85D158d1efC3D40); // weth pool address
     }
 
     function testSwap(bool toggle, uint256 amount, uint256 unwrapFee) public {
